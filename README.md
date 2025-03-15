@@ -432,33 +432,6 @@ return DefaultTabController(
 );
 ```
 
-### showModalBottomSheet
-
-- 画面の下部から出てくるモーダル
-
-```
-showModalBottomSheet(
-  context: context,
-  builder: (context) {
-    return SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            leading: Icon(Icons.edit),
-            title: const Text('編集'),
-          ),
-          ListTile(
-            leading: Icon(Icons.delete),
-            title: const Text('削除'),
-          ),
-        ]
-      ),
-    );
-  });
-)
-```
-
 ## 入力Form Widget
 
 ### TextField
@@ -732,4 +705,62 @@ body: StreamBuilder<int>(
 // 値の更新
 controller.sink.add(_counter++);
 
+```
+
+## 画面割(bodyと同じ階層)
+
+### drawer
+
+```dart
+drawer: Drawer(
+  backgroundColor: const Color.fromARGB(255, 200, 247, 214),
+  child: SafeArea(
+    child: Column(
+      children: [
+        const ListTile(
+          title: Text("Item 1"),
+          leading: Icon(Icons.account_circle_outlined),
+        ),
+        Divider(),
+        const ListTile(
+          title: Text("Item 2"),
+          leading: Icon(Icons.account_circle_outlined),
+        ),
+        Divider(),
+        const ListTile(
+          title: Text("Item 3"),
+          leading: Icon(Icons.account_circle_outlined),
+        ),
+      ],
+    ),
+  )
+),
+```
+
+
+### showModalBottomSheet
+
+- 画面の下部から出てくるモーダル
+
+```
+showModalBottomSheet(
+  context: context,
+  builder: (context) {
+    return SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: const Text('編集'),
+          ),
+          ListTile(
+            leading: Icon(Icons.delete),
+            title: const Text('削除'),
+          ),
+        ]
+      ),
+    );
+  });
+)
 ```
