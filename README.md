@@ -432,6 +432,33 @@ return DefaultTabController(
 );
 ```
 
+### showModalBottomSheet
+
+- 画面の下部から出てくるモーダル
+
+```
+showModalBottomSheet(
+  context: context,
+  builder: (context) {
+    return SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: const Text('編集'),
+          ),
+          ListTile(
+            leading: Icon(Icons.delete),
+            title: const Text('削除'),
+          ),
+        ]
+      ),
+    );
+  });
+)
+```
+
 ## 入力Form Widget
 
 ### TextField
