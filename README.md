@@ -434,6 +434,20 @@ return DefaultTabController(
 
 ## 入力Form Widget
 
+### Expanded
+
+- RowやColumnの子Widget間の隙間を目一杯に埋めたい時に使用する。  
+- Row内にTextFieldなどを配置しようとすると、Rowは幅の制約を持たないために無限の幅を持とうとしてエラーが発生する。  
+  したがって、TextFieldをRow内で使用する場合にExpandedで囲む
+
+```dart
+body : Row(
+  child : TextField(
+
+  )
+)
+```
+
 ### TextField
 
 - 入力フィールドを提供する
